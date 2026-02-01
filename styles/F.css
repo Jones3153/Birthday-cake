@@ -257,18 +257,19 @@ input[type="range"]::-ms-fill-upper {
 
     #pleaseClick {
         left: 50%;
-        bottom: 220px;
+        bottom: 320px;
         font-size: 10px;
     }
 
 }
 @media (max-width: 430px) {
     #pleaseClick {
-        bottom: 300px;
+        left: 50%;
+        bottom: 36vh;
         font-size: 10px;
-        left: 58%;
     }
 }
+
 
 
 
