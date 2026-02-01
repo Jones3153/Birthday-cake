@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Birthday Cake</title>
+    <link rel="stylesheet" href="styles/F.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300italic">
+</head>
+
+<body class="body1">
+
+    <div id="loginBox">
+        <h2>Login</h2>
+        <input class="input_index" type="email" id="email" placeholder="Email" required>
+        <input class="input_index" type="password" id="password" placeholder="Password" required>
+        <button class="index_button" onclick="login()">Login</button>
+        <p id="error"></p>
+    </div>
+
+    <!-- Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        // Replace with Supabase project info
+        const supabaseUrl = 'https://jkcciaykhnpxydgnqcuz.supabase.co';
+        const supabaseKey = 'sb_publishable_Rae6D900DpSDEoo6_9Z01Q_foZEuYnB';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        // Login function
+        async function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Sign in using Supabase Auth
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email: email,
+                password: password
+            });
+
+            if (error) {
+                document.getElementById('error').textContent = 'Login failed: ' + error.message;
+            } else {
+                // Login successful, redirect to your cake page
+                window.location.href = 'login_mainCake.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
