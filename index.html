@@ -27,28 +27,30 @@
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprY2NpYXlraG5weHlkZ25xY3V6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NDUwMzcsImV4cCI6MjA4NTUyMTAzN30.m3EItCkQdcNIUHOwwlzy-24W-D-W7Rt9ro77JCkyvkU';
         const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-        // Login function
-        async function login() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+       async function login() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-            // Sign in using Supabase Auth
-            const { data, error } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password
-            });
+    const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password
+    });
 
-            if (error) {
-                document.getElementById('error').textContent = 'Login failed: ' + error.message;
-            } else {
-                // Login successful, redirect to your cake page
-                window.location.href = 'login_mainCake.html';
-            }
-        }
+    console.log('data:', data);
+    console.log('error:', error);
+
+    if (error) {
+        document.getElementById('error').textContent = 'Login failed: ' + error.message;
+    } else {
+        window.location.href = 'login_mainCake.html';
+    }
+}
+
     </script>
 </body>
 
 
 </html>
+
 
 
