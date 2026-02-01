@@ -40,8 +40,8 @@
             console.log('Trying login with:', email, password);
 
             const { data, error } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password
+                email,
+                password
             });
 
 
@@ -49,9 +49,8 @@
 
 
             if (error) {
-                document.getElementById('error').textContent = 'Login failed: ' + error.message;
+                document.getElementById('error').textContent = error.message;
             } else {
-                // Successful login → redirect
                 window.location.href = 'login_mainCake.html';
             }
         }
