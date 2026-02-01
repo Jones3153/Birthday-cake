@@ -253,7 +253,7 @@ input[type="range"]::-ms-fill-upper {
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
 
     #pleaseClick {
         left: 50%;
@@ -262,6 +262,14 @@ input[type="range"]::-ms-fill-upper {
     }
 
 }
+@media (max-width: 430px) {
+    #pleaseClick {
+        bottom: 300px;
+        font-size: 10px;
+        left: 58%;
+    }
+}
+
 
 
 
