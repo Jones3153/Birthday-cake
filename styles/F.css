@@ -261,7 +261,5 @@ input[type="range"]::-ms-fill-upper {
         font-size: 10px;
     }
 
-    #wishes {
-        margin: calc(55vh - 12em) auto;
-    }
 }
+
