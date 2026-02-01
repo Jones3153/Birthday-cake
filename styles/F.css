@@ -257,9 +257,10 @@ input[type="range"]::-ms-fill-upper {
 
     #pleaseClick {
         left: 50%;
-        bottom: 220px;
+        bottom: 150px;
         font-size: 10px;
     }
 
 }
+
 
