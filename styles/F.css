@@ -1,3 +1,42 @@
+.body1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ee9ca7;
+    font-family: sans-serif;
+}
+
+#loginBox {
+    background: white;
+    padding: 2em;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input_index {
+    display: block;
+    margin: 1em auto;
+    padding: 0.5em;
+    width: 90%;
+}
+
+.index_button {
+    padding: 0.5em 1em;
+    background: #ee9ca7;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#error {
+    color: red;
+    font-size: 0.9em;
+}
+
 html,
 body {
     width: 100%;
@@ -250,7 +289,6 @@ input[type="range"]::-ms-fill-lower {
 
 input[type="range"]::-ms-fill-upper {
     background-color: black;
-
 }
 
 @media (max-width: 768px) {
@@ -260,8 +298,9 @@ input[type="range"]::-ms-fill-upper {
         bottom: 320px;
         font-size: 10px;
     }
-
 }
+
+/* Portrait phones up to iPhone 16 width */
 @media (max-width: 430px) {
     #pleaseClick {
         left: 50%;
@@ -269,14 +308,3 @@ input[type="range"]::-ms-fill-upper {
         font-size: 10px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
