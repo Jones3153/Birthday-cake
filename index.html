@@ -39,10 +39,12 @@
             // Debug: show what values are being sent
             console.log('Trying login with:', email, password);
 
+            // Supabase v2 login
             const { data, error } = await supabase.auth.signInWithPassword({
-                email,
-                password
+                email: email,
+                password: password
             });
+
 
 
             console.log('Supabase login data:', data, 'error:', error);
