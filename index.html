@@ -15,42 +15,45 @@
         <h2>Login</h2>
         <input class="input_index" type="email" id="email" placeholder="Email" required>
         <input class="input_index" type="password" id="password" placeholder="Password" required>
-        <button class="index_button" onclick="login()">Login</button>
+        <button class="index_button" id="loginBtn">Login</button>
         <p id="error"></p>
     </div>
 
     <!-- Supabase JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script>
-        // Replace with Supabase project info
+        // --- Supabase setup ---
         const supabaseUrl = 'https://jkcciaykhnpxydgnqcuz.supabase.co';
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprY2NpYXlraG5weHlkZ25xY3V6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NDUwMzcsImV4cCI6MjA4NTUyMTAzN30.m3EItCkQdcNIUHOwwlzy-24W-D-W7Rt9ro77JCkyvkU';
         const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-     // Login function
+        // --- Login function ---
         async function login() {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Sign in using Supabase Auth
+            // Debug: show what values are being sent
+            console.log('Trying login with:', email, password);
+
             const { data, error } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password
+                email,
+                password
             });
+
+            console.log('Supabase response:', data, error);
 
             if (error) {
                 document.getElementById('error').textContent = 'Login failed: ' + error.message;
             } else {
-                // Login successful, redirect to your cake page
+                // Successful login → redirect
                 window.location.href = 'login_mainCake.html';
             }
         }
+
+        // --- Attach login function to button ---
+        document.getElementById('loginBtn').addEventListener('click', login);
     </script>
+
 </body>
 
-
 </html>
-
-
-
-
