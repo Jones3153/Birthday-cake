@@ -250,4 +250,18 @@ input[type="range"]::-ms-fill-lower {
 
 input[type="range"]::-ms-fill-upper {
     background-color: black;
+
+}
+
+@media (max-width: 768px) {
+
+    #pleaseClick {
+        left: 50%;
+        bottom: 220px;
+        font-size: 10px;
+    }
+
+    #wishes {
+        margin: calc(55vh - 12em) auto;
+    }
 }
