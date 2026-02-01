@@ -20,12 +20,15 @@
     </div>
 
     <!-- Supabase JS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js">
-    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
         // --- Supabase setup ---
         const supabaseUrl = 'https://jkcciaykhnpxydgnqcuz.supabase.co';
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprY2NpYXlraG5weHlkZ25xY3V6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NDUwMzcsImV4cCI6MjA4NTUyMTAzN30.m3EItCkQdcNIUHOwwlzy-24W-D-W7Rt9ro77JCkyvkU';
-        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+        // Only declare if not already declared
+        if (!window.supabase) {
+            window.supabase = supabase.createClient(supabaseUrl, supabaseKey);
+        }
 
         // --- Login function ---
         async function login() {
@@ -35,10 +38,11 @@
             // Debug: show what values are being sent
             console.log('Trying login with:', email, password);
 
-            const { data, error } = await supabase.auth.signInWithPassword({
+            const { data, error } = await window.supabase.auth.signInWithPassword({
                 email,
                 password
             });
+
 
             console.log('Supabase login data:', data, 'error:', error);
 
@@ -58,6 +62,3 @@
 </body>
 
 </html>
-
-
-
