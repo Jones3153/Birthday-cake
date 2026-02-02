@@ -217,8 +217,8 @@ span.jump {
     font-size: 80%;
     width: 10em;
     text-align: center;
-    left: 50%;
-    top: 63%;
+    left: 123px;
+    bottom: 150px;
     /*left: calc(50vw - 5em);
   top: calc(50vh - 12.5em);*/
     animation: jump 1s ease-in-out infinite alternate;
@@ -304,8 +304,7 @@ input[type="range"]::-ms-fill-upper {
 @media (max-width: 430px) {
     #pleaseClick {
         left: 50%;
-        bottom: 36vh;
+        top: 63%;
         font-size: 10px;
     }
 }
-
