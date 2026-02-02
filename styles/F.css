@@ -571,7 +571,6 @@ input[type="range"]::-ms-fill-upper {
     }
 
     .input-box input {
-        font-size: 0.95em;
         height: 45px;
     }
 
@@ -589,7 +588,7 @@ input[type="range"]::-ms-fill-upper {
     .toggle,
     .input-check {
         right: 10px;
-        top: 15px;
+        top: 10px;
         transform: scale(0.75);
     }
 
@@ -601,6 +600,8 @@ input[type="range"]::-ms-fill-upper {
         height: 700px;
     }
 }
+
+
 
 
 
