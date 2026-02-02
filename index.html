@@ -23,33 +23,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        // --- Supabase setup ---
-        const supabaseUrl = 'https://jkcciaykhnpxydgnqcuz.supabase.co';
-        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprY2NpYXlraG5weHlkZ25xY3V6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NDUwMzcsImV4cCI6MjA4NTUyMTAzN30.m3EItCkQdcNIUHOwwlzy-24W-D-W7Rt9ro77JCkyvkU';
+        const SUPABASE_URL = 'https://jkcciaykhnpxydgnqcuz.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImprY2NpYXlraG5weHlkZ25xY3V6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk5NDUwMzcsImV4cCI6MjA4NTUyMTAzN30.m3EItCkQdcNIUHOwwlzy-24W-D-W7Rt9ro77JCkyvkU';
+
+        // Create client (THIS LINE MATTERS)
         const supabaseClient = window.supabase.createClient(
-            supabaseUrl,
-            supabaseKey
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
         );
 
+        console.log('Client:', supabaseClient);
+        console.log('Auth:', supabaseClient.auth);
 
-        // --- Login function ---
         async function login() {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Debug: show what values are being sent
-            console.log('Trying login with:', email, password);
-
-            // Supabase v2 login
-            const { data, error } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password
-            });
-
-
-
-            console.log('Supabase login data:', data, 'error:', error);
-
+            const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+                    email,
+                    password
+                });
 
             if (error) {
                 document.getElementById('error').textContent = error.message;
@@ -58,9 +52,11 @@
             }
         }
 
-        // --- Attach login function to button ---
-        document.getElementById('loginBtn').addEventListener('click', login);
+        document
+            .getElementById('loginBtn')
+            .addEventListener('click', login);
     </script>
+
 
 </body>
 
