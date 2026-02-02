@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-        <link rel="stylesheet" href="styles/F.css">
+    <link rel="stylesheet" href="styles/F.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
 </head>
@@ -67,8 +67,8 @@
                 <div class="input-line"></div>
             </div>
 
-            <button class="login_index_button" id="loginBtn">Login</button>
-            
+            <button class="login_index_button" id="loginBtn" type="button">Login</button>
+
             <p id="error"></p>
 
             <div class="wishes_index">
@@ -80,8 +80,8 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
-    
+
+
     <!-- Supabase JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -99,6 +99,7 @@
         console.log('Auth:', supabaseClient.auth);
 
         async function login() {
+            loginBtn.disabled = true;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
@@ -107,6 +108,8 @@
                     email,
                     password
                 });
+
+            loginBtn.disabled = false;
 
             if (error) {
                 document.getElementById('error').textContent = error.message;
@@ -123,5 +126,3 @@
 </body>
 
 </html>
-
-
