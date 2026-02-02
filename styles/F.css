@@ -550,4 +550,57 @@ input[type="range"]::-ms-fill-upper {
     }
 }
 
+/* =========================
+   Mobile phones (≤ 480px)
+   ========================= */
+@media (max-width: 480px) {
+
+    .login-box {
+        width: 90vw;          /* responsive width */
+        height: auto;         /* let content decide height */
+        padding: 25px 15px;
+    }
+
+    .login_index_h2 {
+        font-size: 1.6em;
+    }
+
+    .input-box {
+        width: 100%;
+        margin: 22px 0;
+    }
+
+    .input-box input {
+        font-size: 0.95em;
+        height: 45px;
+    }
+
+    .login_index_button {
+        height: 45px;
+        font-size: 1em;
+    }
+
+    .wishes_index {
+        font-size: 0.8em;
+        margin-top: 15px;
+    }
+
+    /* Move toggle INSIDE box for mobile */
+    .toggle,
+    .input-check {
+        right: 10px;
+        top: 15px;
+        transform: scale(0.75);
+    }
+
+    .glowing-light {
+        width: 300px;
+    }
+
+    .light {
+        height: 700px;
+    }
+}
+
+
 
