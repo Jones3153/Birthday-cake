@@ -1,24 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="hydrated">
 
 <head>
     <meta charset="UTF-8">
+    <style data-styles="">
+        ion-icon {
+            visibility: hidden
+        }
+
+        .hydrated {
+            visibility: inherit
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Birthday Cake</title>
-    <link rel="stylesheet" href="styles/F.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300italic">
+    <title>Login Form Animation CSS</title>
+        <link rel="stylesheet" href="styles/F.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
 </head>
 
-<body class="body1">
+<body class="login_index_body">
+    <div class="glowing-light"></div>
+    <div class="login-box">
+        <form action="#">
+            <input type="checkbox" class="input-check" id="input-check">
+            <label for="input-check" class="toggle">
+                <span class="text off">off</span>
+                <span class="text on">on</span>
+            </label>
+            <div class="light"></div>
 
-    <div id="loginBox">
-        <h2>Login</h2>
-        <input class="input_index" type="email" id="email" placeholder="Email" required>
-        <input class="input_index" type="password" id="password" placeholder="Password: +YYMMDD" required>
-        <button class="index_button" id="loginBtn">Login</button>
-        <p id="error"></p>
+            <h2 class="login_index_h2">Login</h2>
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="mail" role="img" class="md hydrated" aria-label="mail"><template
+                            shadowrootmode="open">
+                            <div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon"
+                                    viewBox="0 0 512 512">
+                                    <title>Mail</title>
+                                    <path
+                                        d="M424 80H88a56.06 56.06 0 00-56 56v240a56.06 56.06 0 0056 56h336a56.06 56.06 0 0056-56V136a56.06 56.06 0 00-56-56zm-14.18 92.63l-144 112a16 16 0 01-19.64 0l-144-112a16 16 0 1119.64-25.26L256 251.73l134.18-104.36a16 16 0 0119.64 25.26z">
+                                    </path>
+                                </svg></div>
+                        </template></ion-icon>
+                </span>
+                <input class="input_index" type="email" id="email" placeholder="" required>
+                <label>Email</label>
+                <div class="input-line"></div>
+            </div>
+            <div class="input-box">
+                <span class="icon">
+                    <ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"><template
+                            shadowrootmode="open">
+                            <div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon s-ion-icon"
+                                    viewBox="0 0 512 512">
+                                    <title>Lock Closed</title>
+                                    <path
+                                        d="M368 192h-16v-80a96 96 0 10-192 0v80h-16a64.07 64.07 0 00-64 64v176a64.07 64.07 0 0064 64h224a64.07 64.07 0 0064-64V256a64.07 64.07 0 00-64-64zm-48 0H192v-80a64 64 0 11128 0z">
+                                    </path>
+                                </svg></div>
+                        </template></ion-icon>
+                </span>
+                <input class="input_index" type="password" id="password" placeholder="Password: +YYMMDD" required>
+                <label>Password</label>
+                <div class="input-line"></div>
+            </div>
+
+            <button class="login_index_button" id="loginBtn" type="submit">Login</button>
+            
+            <p id="error"></p>
+
+            <div class="wishes_index">
+                <p>Flo Flo ~~~ Happieee ber~~~fu~~~day</p>
+                <p>21 liao ahhhhh~~~</p>
+            </div>
+        </form>
     </div>
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    
     <!-- Supabase JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -56,7 +119,6 @@
             .getElementById('loginBtn')
             .addEventListener('click', login);
     </script>
-
 
 </body>
 
